@@ -1,53 +1,25 @@
 package com.aldina.demo;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Player extends Character {
-    public Player(String name, int level, int strength, int intelligence, int agility, int health, int experience, int baseDamage) {
+    public Player(String name, int level, int strength, int intelligence, int agility, int totalHealth, int experience, int baseDamage) {
         this.name = name;
         this.level = level;
         this.strength = strength;
         this.intelligence = intelligence;
         this.agility = agility;
-        this.health = health;
+        this.totalHealth = totalHealth;
+        this.currentHealth = totalHealth;
         this.xp = experience;
         this.baseDamage = baseDamage;
     }
 
-
-    public boolean fight() {
-        Scanner sc = new Scanner(System.in);
-        Monster monster = new Monster();
-        System.out.println("What would you like to do?\n1. Attack\n2. Get status\n3. Flee");
-
-        while (true) {
-            switch (sc.nextInt()) {
-                case 1 -> {
-                    attack(monster);
-                    monster.attack(this);
-                }
-                case 2 -> {
-                    showStatus();
-                }
-                case 3 -> {
-                    if (flee()) {
-                        return true;
-                    }
-                    else {
-                        monster.attack(this);
-                    }
-                }
-                default -> System.out.println("Invalid input. Please try again.");
-            }
-            if (health <= 0) return false;
-            if (monster.getHealth() <= 0) break;
-        }
-        levelUp();
-        return true;
+    public void addXp(int xp) {
+        this.xp += xp;
     }
 
-    private void levelUp() {
+    public void levelUp() {
         int levelsToIncrease = xp / 100;
         int leftoverXp = xp % 100;
         level += levelsToIncrease;
@@ -56,9 +28,20 @@ public class Player extends Character {
         strength += 2 * levelsToIncrease;
         intelligence += 2 * levelsToIncrease;
         agility += 2 * levelsToIncrease;
+
+        System.out.println(Colors.YELLOW_BOLD + "Level up: +" + (levelsToIncrease*2) + Colors.RESET);
+        System.out.println(Colors.PURPLE + "Strength up: +" + (levelsToIncrease*2) + Colors.RESET);
+        System.out.println(Colors.BLUE + "Intelligence up: +" + (levelsToIncrease*2) + Colors.RESET);
+        System.out.println(Colors.GREEN + "Agility up: +" + (levelsToIncrease*2) + Colors.RESET);
     }
 
-    private boolean flee() {
-        return new Random().nextInt(100) < agility;
+    public boolean flee() {
+        if (new Random().nextInt(100) < agility) {
+            System.out.println(Colors.ITALICS + "You got away! BUT you can't run away forever..." + Colors.RESET);
+            return true;
+        } else {
+            System.out.println(Colors.ITALICS + "Oh no, you were too slow..." + Colors.RESET);
+            return false;
+        }
     }
 }

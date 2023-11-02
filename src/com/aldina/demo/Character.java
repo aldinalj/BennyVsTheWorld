@@ -1,6 +1,7 @@
 package com.aldina.demo;
-
 import java.util.Random;
+
+
 
 public class Character {
     protected String name;
@@ -8,31 +9,46 @@ public class Character {
     protected int strength;
     protected int intelligence;
     protected int agility;
-    protected int health;
+    protected int currentHealth;
+    protected int totalHealth;
     protected int xp;
     protected int baseDamage;
 
+
     public void showStatus() {
-        System.out.println("Status for " + name + ":");
-        System.out.println("Level: " + level);
-        System.out.println("Experience: " + xp);
-        System.out.println("Strength: " + strength);
-        System.out.println("Intelligence: " + intelligence);
-        System.out.println("Agility: " + agility);
-        System.out.println("Health: " + health);
-        System.out.println("Base Damage: " + baseDamage);
+        System.out.println(Colors.BLACK_BACKGROUND + "Status for " + name + ":" + Colors.RESET);
+        System.out.println(Colors.RED + "Health:       " + currentHealth + Colors.RESET);
+        System.out.println(Colors.GREEN + "Agility:      " + agility + Colors.RESET);
+        System.out.println(Colors.BLUE + "Intelligence: " + intelligence + Colors.RESET);
+        System.out.println(Colors.PURPLE + "Strength:     " + strength + Colors.RESET);
+        System.out.println(Colors.WHITE + "Base Damage:  " + baseDamage + Colors.RESET);
+        System.out.println(Colors.YELLOW_BOLD + "Level:        " + level + Colors.RESET);
+        System.out.println(Colors.YELLOW + "Experience:   " + xp + Colors.RESET + "\n");
+
+
+
     }
 
     public void attack(Character character) {
         int damage = calculateDamage();
         // Multiply damage with zero if dodged
-        damage *= new Random().nextInt(100) < character.agility ? 0 : 1;
-        character.health -= damage;
+        if (new Random().nextInt(100) < character.agility) {
+            System.out.println(Colors.ITALICS + "Oh... " + character.name + " dodged " + name + "'s attack!\n" + Colors.RESET);
+            damage = 0;
+        } else {
+            System.out.println(Colors.RED + name + " caused " + damage + " damage!\n" + Colors.RESET);
+        }
+        character.currentHealth -= damage;
     }
 
     private int calculateDamage() {
         // double damage if random int is less than intelligence
-        return (baseDamage + strength) * new Random().nextInt(100) < intelligence ? 2 : 1;
+        int damage = baseDamage + strength;
+        if (new Random().nextInt(100) < intelligence) {
+            damage *= 2;
+            System.out.println(Colors.RED_BACKGROUND + "! CRITICAL HIT !" + Colors.RESET);
+        }
+        return damage;
     }
 
     public String getName() {
@@ -55,8 +71,8 @@ public class Character {
         return agility;
     }
 
-    public int getHealth() {
-        return health;
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 
     public int getXp() {
@@ -65,5 +81,8 @@ public class Character {
 
     public int getBaseDamage() {
         return baseDamage;
+    }
+    public void restoreHealth() {
+        currentHealth = totalHealth;
     }
 }

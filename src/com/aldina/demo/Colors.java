@@ -12,6 +12,7 @@ public class Colors {
     public static final String PURPLE = "\033[0;35m"; // PURPLE
     public static final String CYAN = "\033[0;36m"; // CYAN
     public static final String WHITE = "\033[0;37m"; // WHITE
+
     // Bold
     public static final String BLACK_BOLD = "\033[1;30m"; // BLACK
     public static final String RED_BOLD = "\033[1;31m"; // RED
@@ -39,6 +40,7 @@ public class Colors {
     public static final String PURPLE_BACKGROUND = "\033[45m"; // PURPLE
     public static final String CYAN_BACKGROUND = "\033[46m"; // CYAN
     public static final String WHITE_BACKGROUND = "\033[47m"; // WHITE
+
     // High Intensity
     public static final String BLACK_BRIGHT = "\033[0;90m"; // BLACK
     public static final String RED_BRIGHT = "\033[0;91m"; // RED
@@ -66,4 +68,6 @@ public class Colors {
     public static final String PURPLE_BACKGROUND_BRIGHT = "\033[0;105m"; // PURPLE
     public static final String CYAN_BACKGROUND_BRIGHT = "\033[0;106m"; // CYAN
     public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m"; // WHITE
+
+    public static final String ITALICS = "\033[3m";
 }
