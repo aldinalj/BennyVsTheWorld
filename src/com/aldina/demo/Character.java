@@ -21,9 +21,9 @@ public class Character {
         System.out.println(Colors.GREEN + "Agility:      " + agility + Colors.RESET);
         System.out.println(Colors.BLUE + "Intelligence: " + intelligence + Colors.RESET);
         System.out.println(Colors.PURPLE + "Strength:     " + strength + Colors.RESET);
-        System.out.println(Colors.WHITE + "Base Damage:  " + baseDamage + Colors.RESET);
-        System.out.println(Colors.YELLOW_BOLD + "Level:        " + level + Colors.RESET);
-        System.out.println(Colors.YELLOW + "Experience:   " + xp + Colors.RESET + "\n");
+        System.out.println(Colors.PINK + "Base Damage:  " + baseDamage + Colors.RESET);
+        System.out.println(Colors.YELLOW + "Level:        " + level + Colors.RESET);
+        System.out.println(Colors.ORANGE + "Experience:   " + xp + Colors.RESET + "\n");
 
 
 
@@ -33,7 +33,7 @@ public class Character {
         int damage = calculateDamage();
         // Multiply damage with zero if dodged
         if (new Random().nextInt(100) < character.agility) {
-            System.out.println(Colors.ITALICS + "Oh... " + character.name + " dodged " + name + "'s attack!\n" + Colors.RESET);
+            System.out.println(Colors.BLUE + Colors.ITALICS + "Oh... " + character.name + " dodged " + name + "'s attack!\n" + Colors.RESET);
             damage = 0;
         } else {
             System.out.println(Colors.RED + name + " caused " + damage + " damage!\n" + Colors.RESET);
@@ -46,7 +46,7 @@ public class Character {
         int damage = baseDamage + strength;
         if (new Random().nextInt(100) < intelligence) {
             damage *= 2;
-            System.out.println(Colors.RED_BACKGROUND + "! CRITICAL HIT !" + Colors.RESET);
+            System.out.println(Colors.RED_BACKGROUND + Colors.UNDERLINED + "! CRITICAL HIT !" + Colors.RESET);
         }
         return damage;
     }

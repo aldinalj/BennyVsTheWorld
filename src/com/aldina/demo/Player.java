@@ -29,7 +29,7 @@ public class Player extends Character {
         intelligence += 2 * levelsToIncrease;
         agility += 2 * levelsToIncrease;
 
-        System.out.println(Colors.YELLOW_BOLD + "Level up: +" + (levelsToIncrease*2) + Colors.RESET);
+        System.out.println(Colors.YELLOW + "Level up: +" + (levelsToIncrease*2) + Colors.RESET);
         System.out.println(Colors.PURPLE + "Strength up: +" + (levelsToIncrease*2) + Colors.RESET);
         System.out.println(Colors.BLUE + "Intelligence up: +" + (levelsToIncrease*2) + Colors.RESET);
         System.out.println(Colors.GREEN + "Agility up: +" + (levelsToIncrease*2) + Colors.RESET);

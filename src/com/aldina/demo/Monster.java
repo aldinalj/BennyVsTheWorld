@@ -24,7 +24,6 @@ public class Monster extends Character {
         monsterList.add(new Monster("Sidon", 13, 13, 13, 50,2, 50));
         monsterList.add(new Monster("Nabooru", 13, 13, 13, 50,2, 50));
         monsterList.add(new Monster("Pudge", 13, 13, 13, 50, 2,50));
-        //monsterList.add(new Monster("Krille", 13, 13, 13, 50,2,50));
 
         return monsterList;
     }
