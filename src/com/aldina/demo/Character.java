@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class Character {
     protected String name;
-    protected int level;
     protected int strength;
     protected int intelligence;
     protected int agility;
@@ -13,19 +12,17 @@ public class Character {
     protected int totalHealth;
     protected int xp;
     protected int baseDamage;
-
+    protected int gold;
 
     public void showStatus() {
-        System.out.println(Colors.BLACK_BACKGROUND + "Status for " + name + ":" + Colors.RESET);
-        System.out.println(Colors.RED + "Health:       " + currentHealth + Colors.RESET);
-        System.out.println(Colors.GREEN + "Agility:      " + agility + Colors.RESET);
-        System.out.println(Colors.BLUE + "Intelligence: " + intelligence + Colors.RESET);
-        System.out.println(Colors.PURPLE + "Strength:     " + strength + Colors.RESET);
-        System.out.println(Colors.PINK + "Base Damage:  " + baseDamage + Colors.RESET);
-        System.out.println(Colors.YELLOW + "Level:        " + level + Colors.RESET);
-        System.out.println(Colors.ORANGE + "Experience:   " + xp + Colors.RESET + "\n");
-
-
+        System.out.println(Colors.BLACK_BACKGROUND + "Status for " + name + ":\t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.RED + "Health:       " + currentHealth + " \t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.GREEN + "Agility:      " + agility + " \t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.BLUE + "Intelligence: " + intelligence + " \t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.PURPLE + "Strength:     " + strength + " \t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.PINK + "Base Damage:  " + baseDamage + " \t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.YELLOW + "Gold:         " +  gold + " \t" + Colors.RESET);
+        System.out.println(Colors.BLACK_BACKGROUND + Colors.ORANGE + "Experience:   " + xp + " \t" + Colors.RESET);
 
     }
 
@@ -42,6 +39,9 @@ public class Character {
     }
 
     private int calculateDamage() {
+
+
+
         // double damage if random int is less than intelligence
         int damage = baseDamage + strength;
         if (new Random().nextInt(100) < intelligence) {
@@ -53,10 +53,6 @@ public class Character {
 
     public String getName() {
         return name;
-    }
-
-    public int getLevel() {
-        return level;
     }
 
     public int getStrength() {
@@ -82,6 +78,11 @@ public class Character {
     public int getBaseDamage() {
         return baseDamage;
     }
+
+    public int getGold() {
+        return gold;
+    }
+
     public void restoreHealth() {
         currentHealth = totalHealth;
     }
