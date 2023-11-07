@@ -1,5 +1,7 @@
 package com.aldina.demo;
 
+import com.aldina.demo.characters.Player;
+
 import java.util.Scanner;
 
 public class Main {
@@ -12,14 +14,14 @@ public class Main {
                 "\nWhat's your name player?");
 
         String playerName = sc.nextLine();
-        Player player = new Player(playerName, 1, 13, 13, 13, 20, 0, 2,50);
+        Player player = new Player(playerName, 1, 13, 13, 13, 500, 0, 2,50);
         Game game = new Game(player);
 
         System.out.println("Welcome " + playerName + ". Before we begin the battles of Frida's heart, you should know a few things. I've already given your some gold that you can use in tbe shop");
         // Insert lore
 
        do {
-           if (player.currentHealth <= 0) {
+           if (player.getCurrentHealth() <= 0) {
                System.out.println("         " + Colors.RED_BACKGROUND + "-- GAME OVER --" + Colors.RESET);
                System.out.println(Colors.RED + """
                        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡶⠛⠛⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

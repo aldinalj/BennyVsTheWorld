@@ -63,4 +63,9 @@ public class MagicStaff implements Weapon {
     public void attack() {
         System.out.println("Beams fired!");
     }
+
+    @Override
+    public Weapon copy() {
+        return new MagicStaff(name, damage, agility, strength, intelligence, price);
+    }
 }

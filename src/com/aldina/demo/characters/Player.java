@@ -1,14 +1,18 @@
-package com.aldina.demo;
+package com.aldina.demo.characters;
 
-import java.util.ArrayList;
+import com.aldina.demo.Colors;
+import com.aldina.demo.Inventory;
+import com.aldina.demo.characters.Character;
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class Player extends Character {
 
     private int level;
+    private Inventory inventory;
 
     public Player(String name, int level, int strength, int intelligence, int agility, int totalHealth, int experience, int baseDamage, int gold) {
+        this.inventory = new Inventory();
         this.name = name;
         this.level = level;
         this.strength = strength;
@@ -59,5 +63,9 @@ public class Player extends Character {
             System.out.println(Colors.ITALICS + "Oh no, you were too slow..." + Colors.RESET);
             return false;
         }
+    }
+
+    public Inventory getInventory() {
+        return inventory;
     }
 }

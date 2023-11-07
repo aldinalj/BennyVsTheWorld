@@ -62,6 +62,11 @@ public class Spear implements Weapon {
     public void attack() {
         System.out.println("Spear lunged!");
     }
+
+    @Override
+    public Weapon copy() {
+        return new Spear(name, damage, agility, strength, intelligence, price);
+    }
 }
 
 

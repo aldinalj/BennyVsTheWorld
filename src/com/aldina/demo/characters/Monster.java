@@ -1,6 +1,4 @@
-package com.aldina.demo;
-
-// import com.sun.security.auth.NTSidDomainPrincipal;
+package com.aldina.demo.characters;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +29,8 @@ public class Monster extends Character {
         monsterList.add(new Monster("Sidon", 13, 13, 13, 50,2, 50, 50));
         monsterList.add(new Monster("Nabooru", 13, 13, 13, 50,2, 50, 50));
         monsterList.add(new Monster("Pudge", 13, 13, 13, 50, 2,50, 50));
+        monsterList.add(new Monster("Herobrine", 13, 13, 13, 50, 2,50, 50));
+        monsterList.add(new Monster("Bowser", 13, 13, 13, 50, 2,50, 50));
 
         return monsterList;
     }

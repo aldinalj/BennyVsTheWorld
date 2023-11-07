@@ -4,15 +4,20 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.aldina.demo.characters.Monster;
+import com.aldina.demo.characters.Player;
+
 public class Game {
 
     private Player player;
     private List<Monster> monsters;
+    private Shop shopInstance = new Shop();
 
     public Game(Player player) {
         this.player = player;
         monsters = Monster.generateMonsters();
     }
+
 
     public boolean act() {
         Monster monster = getMonster();
@@ -21,7 +26,7 @@ public class Game {
 
 
         while (true) {
-            System.out.println("What would you like to do?\n1. Attack \n2. Use potions \n3. Get status\n4. Flee");
+            System.out.println("What would you like to do?\n1. Attack \n2. Use potions \n3. Get status\n4. Flee \n5. Visit shop");
 
             switch (sc.nextInt()) {
                 case 1 -> {
@@ -43,7 +48,7 @@ public class Game {
                         monster.attack(player);
                     }
                 }
-                //case 4 -> Shop.shop(player.getGold());
+                case 5 -> shopInstance.browse(player);
                 default -> System.out.println("Invalid input. Please try again.");
             }
             if (player.getCurrentHealth() <= 0) return false;

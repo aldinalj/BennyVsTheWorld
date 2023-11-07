@@ -64,4 +64,9 @@ public class ShockArrows implements Weapon {
     public void attack() {
         System.out.println("Shock arrows shot!");
     }
+
+    @Override
+    public Weapon copy() {
+        return new ShockArrows(name, damage, agility, strength, intelligence, price);
+    }
 }

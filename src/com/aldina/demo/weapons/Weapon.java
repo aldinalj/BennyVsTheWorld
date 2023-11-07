@@ -9,4 +9,5 @@ public interface Weapon {
     int getIntelligence();
     int getPrice();
     void attack();
+    Weapon copy();
 }

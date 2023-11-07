@@ -1,4 +1,6 @@
-package com.aldina.demo;
+package com.aldina.demo.characters;
+import com.aldina.demo.Colors;
+
 import java.util.Random;
 
 
@@ -40,8 +42,6 @@ public class Character {
 
     private int calculateDamage() {
 
-
-
         // double damage if random int is less than intelligence
         int damage = baseDamage + strength;
         if (new Random().nextInt(100) < intelligence) {
@@ -81,6 +81,10 @@ public class Character {
 
     public int getGold() {
         return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 
     public void restoreHealth() {
