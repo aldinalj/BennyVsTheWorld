@@ -85,12 +85,6 @@ public class Game {
 
         System.out.println("\"Thank you so much " + player.getName() + ". I finally won Frida's heart!");
         Scanner sc = new Scanner(System.in);
-
-
-
-
-
-
         sc.nextLine();
     }
 

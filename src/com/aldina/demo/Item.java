@@ -2,6 +2,7 @@ package com.aldina.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Item {
 
@@ -54,26 +55,5 @@ public class Item {
         itemList.add(new Item("SuperClass potion", 50,2,2,2, 50));
 
         return itemList;
-    }
-
-    public void showItems(List<Item> itemList) {
-        int itemNumber = 1;
-
-        for (Item item : itemList) {
-            System.out.println(itemNumber + ". " + item.getName() + Colors.RESET);
-            System.out.print(Colors.RED + "Health +" + item.getHealth() + Colors.RESET);
-            System.out.print(Colors.PURPLE + " Strength +" + item.getStrength() + Colors.RESET);
-            System.out.print(Colors.GREEN + " Agility +" + item.getAgility() + Colors.RESET + Colors.RESET);
-            System.out.print(Colors.BLUE + " Intelligence +" + item.getIntelligence() + Colors.RESET);
-            System.out.print(Colors.YELLOW + " Price: " + item.getPrice() + Colors.RESET);
-
-        }
-
-
-
-
-
-
-
     }
 }
