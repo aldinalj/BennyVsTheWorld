@@ -15,14 +15,17 @@ public class Colors {
     public static final String PURPLE = "\033[38;5;90m";
     public static final String BLUE = "\033[38;5;62m";
     public static final String BLACK = "\033[38;5;232m";
-
+    public static final String PINKst = "\033[38;5;205m";
+    public static final String GREENin = "\033[38;5;71m";
 
     // Background
     public static final String BLACK_BACKGROUND = "\033[40m"; // BLACK
     public static final String RED_BACKGROUND = "\033[48;5;52m"; // RED
+    public static final String PINK_BACKGROUND = "\033[48;5;205m";
 
 
     // Special
     public static final String ITALICS = "\033[3m";
     public static final String UNDERLINED = "\u001B[4m";
+    public static final String BOLD = "\033[1m";
 }

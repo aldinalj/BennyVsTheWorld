@@ -1,5 +1,6 @@
 package com.aldina.demo.characters;
 import com.aldina.demo.Colors;
+import com.aldina.demo.weapons.Weapon;
 
 import java.util.Random;
 
@@ -15,6 +16,7 @@ public class Character {
     protected int xp;
     protected int baseDamage;
     protected int gold;
+    protected Weapon equippedWeapon;
 
     public void showStatus() {
         System.out.println(Colors.BLACK_BACKGROUND + "Status for " + name + ":\t" + Colors.RESET);
@@ -29,26 +31,7 @@ public class Character {
     }
 
     public void attack(Character character) {
-        int damage = calculateDamage();
-        // Multiply damage with zero if dodged
-        if (new Random().nextInt(100) < character.agility) {
-            System.out.println(Colors.BLUE + Colors.ITALICS + "Oh... " + character.name + " dodged " + name + "'s attack!\n" + Colors.RESET);
-            damage = 0;
-        } else {
-            System.out.println(Colors.RED + name + " caused " + damage + " damage!\n" + Colors.RESET);
-        }
-        character.currentHealth -= damage;
-    }
-
-    private int calculateDamage() {
-
-        // double damage if random int is less than intelligence
-        int damage = baseDamage + strength;
-        if (new Random().nextInt(100) < intelligence) {
-            damage *= 2;
-            System.out.println(Colors.RED_BACKGROUND + Colors.UNDERLINED + "! CRITICAL HIT !" + Colors.RESET);
-        }
-        return damage;
+        character.currentHealth -= equippedWeapon.attack(this, character);
     }
 
     public String getName() {

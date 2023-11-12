@@ -1,13 +1,11 @@
 package com.aldina.demo.weapons;
 
+import com.aldina.demo.characters.Character;
+
 public interface Weapon {
 
     String getName();
-    int getDamage();
-    int getAgility();
-    int getStrength();
-    int getIntelligence();
     int getPrice();
-    void attack();
+    int attack(Character attacker, Character target);
     Weapon copy();
 }

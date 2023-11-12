@@ -2,10 +2,11 @@ package com.aldina.demo;
 
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 import com.aldina.demo.characters.Monster;
 import com.aldina.demo.characters.Player;
+import com.aldina.demo.weapons.Fists;
+import com.aldina.demo.weapons.Weapon;
 
 public class Game {
 
@@ -22,24 +23,26 @@ public class Game {
     public boolean act() {
         Monster monster = getMonster();
         monster.showStatus();
-        Scanner sc = new Scanner(System.in);
+        InputHandler in = new InputHandler();
 
 
         while (true) {
-            System.out.println("What would you like to do?\n1. Attack \n2. Use potions \n3. Get status\n4. Flee \n5. Visit shop");
+            System.out.println("What would you like to do?\n1. Attack \n2. Equip weapon \n3. Use potion(s) \n4. Get status\n5. Flee \n6. Visit shop");
+            System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
 
-            switch (sc.nextInt()) {
+            switch (in.takeNumber()) {
                 case 1 -> {
                     player.attack(monster);
                     monster.attack(player);
                 }
-                //case -> 2
+                case 2 -> player.equipWeapon();
+                case 3 -> player.usePotion();
 
-                case 3 -> {
+                case 4 -> {
                     player.showStatus();
                     monster.showStatus();
                 }
-                case 4 -> {
+                case 5 -> {
                     if (player.flee()) {
                         monster.restoreHealth();
                         return true;
@@ -48,14 +51,14 @@ public class Game {
                         monster.attack(player);
                     }
                 }
-                case 5 -> shopInstance.browse(player);
-                default -> System.out.println("Invalid input. Please try again.");
+                case 6 -> shopInstance.browse(player);
+                default -> System.out.println(Colors.BOLD + Colors.RED + "⚠ Invalid input. Please try again." + Colors.RESET);
             }
             if (player.getCurrentHealth() <= 0) return false;
             if (monster.getCurrentHealth() <= 0) {
                 if (monster.getName().equals("Krille")) {
                     winGame();
-                    System.exit(0);
+                    quit();
                 }
                 monsters.remove(monster);
                 break;
@@ -81,7 +84,7 @@ public class Game {
             Monster randomMonster = monsters.get(randomIndex);
             return randomMonster;
         } else {
-            return new Monster("Krille",2,2,2,100,2,2,500);
+            return new Monster("Krille",2,2,2,100,2,2,500, new Fists("Strong fists", 0));
         }
 
     }
@@ -89,9 +92,10 @@ public class Game {
     private void winGame(){
 
         System.out.println("\"Thank you so much " + player.getName() + ". I finally won Frida's heart!");
-        Scanner sc = new Scanner(System.in);
-        sc.nextLine();
+        InputHandler in = new InputHandler();
+        in.takeString();
     }
+
 
 
 }

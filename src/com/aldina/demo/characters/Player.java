@@ -1,9 +1,14 @@
 package com.aldina.demo.characters;
 
 import com.aldina.demo.Colors;
+import com.aldina.demo.InputHandler;
 import com.aldina.demo.Inventory;
+import com.aldina.demo.Potion;
 import com.aldina.demo.characters.Character;
+import com.aldina.demo.weapons.Fists;
+import com.aldina.demo.weapons.Weapon;
 
+import java.util.List;
 import java.util.Random;
 
 public class Player extends Character {
@@ -23,6 +28,8 @@ public class Player extends Character {
         this.xp = experience;
         this.baseDamage = baseDamage;
         this.gold = gold;
+        this.equippedWeapon = new Fists("Fists",0);
+        this.inventory.addWeapon(equippedWeapon);
     }
 
     @Override
@@ -47,11 +54,11 @@ public class Player extends Character {
         agility += 2 * levelsToIncrease;
         this.gold += gold;
 
-        System.out.println(Colors.YELLOW + "Level up: +" + (levelsToIncrease * 2) + Colors.RESET);
+        System.out.println(Colors.ORANGE + "Level up: +" + (levelsToIncrease * 2) + Colors.RESET);
         System.out.println(Colors.PURPLE + "Strength up: +" + (levelsToIncrease * 2) + Colors.RESET);
         System.out.println(Colors.BLUE + "Intelligence up: +" + (levelsToIncrease * 2) + Colors.RESET);
         System.out.println(Colors.GREEN + "Agility up: +" + (levelsToIncrease * 2) + Colors.RESET);
-        System.out.println(Colors.GREEN + "Gold: +" + gold + Colors.RESET);
+        System.out.println(Colors.YELLOW + "Gold: +" + gold + Colors.RESET);
 
     }
 
@@ -67,5 +74,62 @@ public class Player extends Character {
 
     public Inventory getInventory() {
         return inventory;
+    }
+    public void equipWeapon() {
+
+        InputHandler in = new InputHandler();
+
+        inventory.showWeapons();
+
+        System.out.println("0. Go back");
+
+        System.out.println("Which weapon would you like to equip?");
+        System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
+
+        while (true) {
+            int weaponChoice = (in.takeNumber() - 1);
+            if (weaponChoice >= 0 && weaponChoice < inventory.getWeapons().size()) {
+                equippedWeapon = inventory.getWeapons().get(weaponChoice);
+                System.out.println(equippedWeapon.getName() + " is equipped!\n");
+                return;
+            } else if (weaponChoice == -1) {
+                return;
+            } else {
+                System.out.println(Colors.BOLD + Colors.RED + "⚠ Did your fingers slip?..." + Colors.RESET);
+            }
+        }
+    }
+    public void usePotion() {
+        InputHandler in = new InputHandler();
+
+        inventory.showPotions();
+
+        System.out.println("0. Go back");
+
+        System.out.println("Which potion would you like to consume?");
+        System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
+
+        while (true) {
+            int potionChoice = (in.takeNumber() - 1);
+            if (potionChoice >= 0 && potionChoice < inventory.getPotions().size()) {
+
+                Potion selectedPotion = inventory.getPotions().get(potionChoice);
+
+                currentHealth += selectedPotion.getHealth();
+                agility += selectedPotion.getAgility();
+                intelligence += selectedPotion.getIntelligence();
+                strength += selectedPotion.getStrength();
+
+                System.out.println(selectedPotion.getName() + " is consumed!\n");
+
+                inventory.removePotion(selectedPotion);
+                return;
+            } else if (potionChoice == -1) {
+                return;
+            } else {
+                System.out.println(Colors.BOLD + Colors.RED + "⚠ Did your fingers slip?..." + Colors.RESET);
+            }
+        }
+
     }
 }

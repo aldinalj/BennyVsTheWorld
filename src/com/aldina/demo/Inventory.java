@@ -13,7 +13,6 @@ public class Inventory {
     public Inventory() {
         potions = new ArrayList<>();
         weapons = new ArrayList<>();
-
     }
 
     public Inventory(List<Potion> potions, List<Weapon> weapons) {
@@ -22,6 +21,23 @@ public class Inventory {
     }
 
     public void showInventory() {
+        showWeapons();
+        showPotions();
+    }
+
+    public void showWeapons() {
+
+        int weaponNumber = 1;
+
+        System.out.println("Weapons:");
+
+        for (Weapon weapon : weapons) {
+            System.out.println(weaponNumber + ". " + weapon.getName() + Colors.RESET);
+            weaponNumber++;
+        }
+    }
+
+    public void showPotions() {
 
         int potionNumber = 1;
 
@@ -32,22 +48,8 @@ public class Inventory {
             System.out.print(Colors.RED + "Health +" + potion.getHealth() + Colors.RESET);
             System.out.print(Colors.PURPLE + " Strength +" + potion.getStrength() + Colors.RESET);
             System.out.print(Colors.GREEN + " Agility +" + potion.getAgility() + Colors.RESET + Colors.RESET);
-            System.out.print(Colors.BLUE + " Intelligence +" + potion.getIntelligence() + Colors.RESET);
-            System.out.print(Colors.YELLOW + " Price: " + potion.getPrice() + Colors.RESET);
+            System.out.println(Colors.BLUE + " Intelligence +" + potion.getIntelligence() + Colors.RESET);
             potionNumber++;
-        }
-
-        int weaponNumber = 1;
-
-        System.out.println("Weapons:");
-
-        for (Weapon weapon : weapons) {
-            System.out.println(weaponNumber + ". " + weapon.getName() + Colors.RESET);
-            System.out.print(Colors.PURPLE + " Strength +" + weapon.getStrength() + Colors.RESET);
-            System.out.print(Colors.GREEN + " Agility +" + weapon.getAgility() + Colors.RESET + Colors.RESET);
-            System.out.print(Colors.BLUE + " Intelligence +" + weapon.getIntelligence() + Colors.RESET);
-            System.out.print(Colors.YELLOW + " Price: " + weapon.getPrice() + Colors.RESET);
-            weaponNumber++;
         }
     }
 
@@ -65,6 +67,10 @@ public class Inventory {
 
     public void appPotion(Potion potion) {
         potions.add(potion);
+    }
+
+    public void removePotion(Potion potion) {
+        potions.remove(potion);
     }
 
 }

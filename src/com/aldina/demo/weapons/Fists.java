@@ -5,12 +5,12 @@ import com.aldina.demo.characters.Character;
 
 import java.util.Random;
 
-public class ShockArrows implements Weapon {
+public class Fists implements Weapon{
 
     private String name;
     private int price;
 
-    public ShockArrows(String name, int price) {
+    public Fists(String name, int price) {
         this.name = name;
         this.price = price;
 
@@ -27,6 +27,7 @@ public class ShockArrows implements Weapon {
         return name;
     }
 
+
     @Override
     public int getPrice() {
         return price;
@@ -34,7 +35,7 @@ public class ShockArrows implements Weapon {
 
     @Override
     public int attack(Character attacker, Character target) {
-        System.out.println("ೃ⁀➷ Shock arrows shot!");
+        System.out.println("BONK! SMACK!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
         if (new Random().nextInt(100) < attacker.getIntelligence()) {
             damage *= 2;
@@ -53,6 +54,8 @@ public class ShockArrows implements Weapon {
 
     @Override
     public Weapon copy() {
-        return new ShockArrows(name, price);
+        return new Fists(name, price);
     }
 }
+
+
