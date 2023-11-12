@@ -1,9 +1,11 @@
 package com.aldina.demo.weapons;
 
-import com.aldina.demo.Colors;
+import com.aldina.demo.text.Colors;
 import com.aldina.demo.characters.Character;
 
 import java.util.Random;
+
+import static com.aldina.demo.text.PrintDelay.printDelay;
 
 public class Fists implements Weapon{
 
@@ -35,7 +37,7 @@ public class Fists implements Weapon{
 
     @Override
     public int attack(Character attacker, Character target) {
-        System.out.println("BONK! SMACK!");
+        printDelay("BONK! SMACK!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
         if (new Random().nextInt(100) < attacker.getIntelligence()) {
             damage *= 2;

@@ -1,5 +1,6 @@
 package com.aldina.demo;
 
+import com.aldina.demo.text.Colors;
 import com.aldina.demo.weapons.Weapon;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Inventory {
 
         int weaponNumber = 1;
 
-        System.out.println("Weapons:");
+        System.out.println("⚜ Weapons ⚜:");
 
         for (Weapon weapon : weapons) {
             System.out.println(weaponNumber + ". " + weapon.getName() + Colors.RESET);
@@ -41,7 +42,7 @@ public class Inventory {
 
         int potionNumber = 1;
 
-        System.out.println("Potions:");
+        System.out.println("\uD81A\uDD0D Potions \uD81A\uDD0D:");
 
         for (Potion potion : potions) {
             System.out.println(potionNumber + ". " + potion.getName() + Colors.RESET);

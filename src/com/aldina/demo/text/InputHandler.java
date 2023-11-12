@@ -1,4 +1,4 @@
-package com.aldina.demo;
+package com.aldina.demo.text;
 
 import java.util.Scanner;
 

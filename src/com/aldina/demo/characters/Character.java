@@ -1,9 +1,6 @@
 package com.aldina.demo.characters;
-import com.aldina.demo.Colors;
+import com.aldina.demo.text.Colors;
 import com.aldina.demo.weapons.Weapon;
-
-import java.util.Random;
-
 
 
 public class Character {

@@ -1,14 +1,11 @@
 package com.aldina.demo.characters;
 
-import com.aldina.demo.Colors;
-import com.aldina.demo.InputHandler;
+import com.aldina.demo.text.Colors;
+import com.aldina.demo.text.InputHandler;
 import com.aldina.demo.Inventory;
 import com.aldina.demo.Potion;
-import com.aldina.demo.characters.Character;
 import com.aldina.demo.weapons.Fists;
-import com.aldina.demo.weapons.Weapon;
 
-import java.util.List;
 import java.util.Random;
 
 public class Player extends Character {

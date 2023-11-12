@@ -1,6 +1,6 @@
 package com.aldina.demo.weapons;
 
-import com.aldina.demo.Colors;
+import com.aldina.demo.text.Colors;
 import com.aldina.demo.characters.Character;
 
 import java.util.Random;

@@ -1,9 +1,11 @@
 package com.aldina.demo.weapons;
 
-import com.aldina.demo.Colors;
+import com.aldina.demo.text.Colors;
 import com.aldina.demo.characters.Character;
 
 import java.util.Random;
+
+import static com.aldina.demo.text.PrintDelay.printDelay;
 
 public class MagicStaff implements Weapon {
 
@@ -34,7 +36,7 @@ public class MagicStaff implements Weapon {
 
     @Override
     public int attack(Character attacker, Character target) {
-        System.out.println("*.·:·.✧ ✦ ✧.·:·.*  Beams fired!");
+        printDelay("*.·:·.✧ ✦ ✧.·:·.*  Beams fired!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
         if (new Random().nextInt(100) < attacker.getIntelligence()) {
             damage *= 2;
