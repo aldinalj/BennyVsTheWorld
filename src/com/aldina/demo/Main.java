@@ -13,22 +13,22 @@ public class Main {
 
         System.out.println(Colors.PINK_BACKGROUND + "≪ °❈° ≫ BENNY VS THE WORLD ≪ °❈° ≫ " + Colors.RESET + "\n(A story based on Scott Pilgrim VS The World, different video games and JAVA23)");
 
-        printDelay(Colors.PINKst + "Follow the story of Benny, a young man who's determined to win the heart of his new girlfriend, Frida." +
+        /*printDelay(Colors.PINKst + "Follow the story of Benny, a young man who's determined to win the heart of his new girlfriend, Frida." +
                 "\nThe catch? He must confront her seven formidable ex-boyfriends, one by one." +
                 "\nPrepare to aid Benny in his romantic adventure and help him secure his happily ever after with Frida.\n" +
                 "Now, before we delve into this tale, could you kindly share your name, dear player?" + Colors.RESET);
-        System.out.print(Colors.GREENin + "➺ " + Colors.RESET);
+        System.out.print(Colors.GREENin + "➺ " + Colors.RESET);*/
 
         String playerName = in.takeString();
-        Player player = new Player(playerName, 1, 13, 13, 13, 500, 0, 2,4323);
+        Player player = new Player(playerName, 1, 13, 13, 13, 80, 0, 2,4323);
         Game game = new Game(player);
 
-        printDelay("\nWelcome " + Colors.GREENin + playerName + Colors.RESET + ". Before we begin the battles of Frida's heart, you should know a few things. \nWhen this pops up "
+        /*printDelay("\nWelcome " + Colors.GREENin + playerName + Colors.RESET + ". Before we begin the battles of Frida's heart, you should know a few things. \nWhen this pops up "
                 + Colors.GREENin + "❁༺" + Colors.RESET + " you have to make to make a choice. \nYou will fight Frida's exs in a randomized order. \nI highly recommend you speak with the " +
                 "lore master to best know how to defeat them. \nThere is a temple of knowledge where you can achieve awards if you answer the questions right. \nAs a wise Swedish man once said " +
                 "\"Fuskare förlorar privilegiet att skryta\", which roughly translates to \n\"Cheaters loses the privilege to brag\", so make sure you actually only use the knowledge you" +
                 " know to answer the questions. \nThere's a shop filled with weapons and potions. Talk to the lore master for hints to the best weapons to use in battle. \nHere! Take these 50 gold" +
-                " coins that you can use in the shop. Good luck!\n");
+                " coins that you can use in the shop. Good luck!\n");*/
 
        do {
            if (player.getCurrentHealth() <= 0) {
@@ -55,6 +55,10 @@ public class Main {
                        ⠀⠀⠀⠀⠀⠀⠀⠙⢶⠬⠴⢧⣤⣤⣤⣽⣬⡥⠞⠛⠛⠋⠉⠀⠀
                        YOU RUINED BENNY'S CHANCE TO BE WITH FRIDA⠀⠀⠀⠀⠀
                        """ + Colors.RESET);
+               System.out.println("Enemes defeated: " + game.getEnemiesDefeated());
+               System.out.println("Level " + player.getLevel());
+               System.out.println("Inventory: ");
+               player.getInventory().showInventory();
                System.exit(0);
            }
 

@@ -30,7 +30,7 @@ public class Inventory {
 
         int weaponNumber = 1;
 
-        System.out.println("⚜ Weapons ⚜:");
+        System.out.println(Colors.UNDERLINED + "⚜ Weapons ⚜:" + Colors.RESET);
 
         for (Weapon weapon : weapons) {
             System.out.println(weaponNumber + ". " + weapon.getName() + Colors.RESET);
@@ -42,7 +42,7 @@ public class Inventory {
 
         int potionNumber = 1;
 
-        System.out.println("\uD81A\uDD0D Potions \uD81A\uDD0D:");
+        System.out.println(Colors.UNDERLINED + "\uD81A\uDD0D Potions \uD81A\uDD0D:" + Colors.RESET);
 
         for (Potion potion : potions) {
             System.out.println(potionNumber + ". " + potion.getName() + Colors.RESET);

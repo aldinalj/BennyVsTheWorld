@@ -129,4 +129,8 @@ public class Player extends Character {
         }
 
     }
+
+    public int getLevel() {
+        return level;
+    }
 }

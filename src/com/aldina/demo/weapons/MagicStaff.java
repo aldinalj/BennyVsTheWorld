@@ -19,7 +19,7 @@ public class MagicStaff implements Weapon {
     }
 
     public void displayInfo() {
-        System.out.println("Weapon Name: " + getName());
+        System.out.println("Weapon: " + getName());
         System.out.println("Price: " + getPrice());
     }
 

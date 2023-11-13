@@ -13,11 +13,10 @@ public class ShockArrows implements Weapon {
     public ShockArrows(String name, int price) {
         this.name = name;
         this.price = price;
-
     }
 
     public void displayInfo() {
-        System.out.println("Weapon Name: " + getName());
+        System.out.println("Weapon: " + getName());
         System.out.println("Price: " + getPrice());
     }
 
@@ -47,7 +46,6 @@ public class ShockArrows implements Weapon {
         } else {
             System.out.println(Colors.RED + attacker.getName() + " caused " + damage + " damage!\n" + Colors.RESET);
         }
-
         return damage;
     }
 

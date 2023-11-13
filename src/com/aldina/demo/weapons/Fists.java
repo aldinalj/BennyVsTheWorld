@@ -19,7 +19,7 @@ public class Fists implements Weapon{
     }
 
     public void displayInfo() {
-        System.out.println("Weapon Name: " + getName());
+        System.out.println("Weapon: " + getName());
         System.out.println("Price: " + getPrice());
     }
 
@@ -37,7 +37,7 @@ public class Fists implements Weapon{
 
     @Override
     public int attack(Character attacker, Character target) {
-        printDelay("BONK! SMACK!");
+        printDelay("(ง︡'-'︠)ง BONK! SMACK!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
         if (new Random().nextInt(100) < attacker.getIntelligence()) {
             damage *= 2;

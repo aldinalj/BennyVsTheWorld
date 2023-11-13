@@ -13,6 +13,7 @@ import static com.aldina.demo.text.PrintDelay.printDelay;
 
 public class Game {
 
+    private int enemiesDefeated;
     private Player player;
     private List<Monster> monsters;
     private Shop shopInstance = new Shop();
@@ -20,10 +21,11 @@ public class Game {
     public Game(Player player) {
         this.player = player;
         monsters = Monster.generateMonsters();
+        enemiesDefeated = 0;
     }
 
 
-    public boolean act() {
+    public void act() {
         Monster monster = getMonster();
         monster.showStatus();
         InputHandler in = new InputHandler();
@@ -48,7 +50,7 @@ public class Game {
                 case 5 -> {
                     if (player.flee()) {
                         monster.restoreHealth();
-                        return true;
+                        return;
                     }
                     else {
                         monster.attack(player);
@@ -57,12 +59,8 @@ public class Game {
                 case 6 -> shopInstance.browse(player);
                 default -> System.out.println(Colors.BOLD + Colors.RED + "⚠ Invalid input. Please try again." + Colors.RESET);
             }
-            if (player.getCurrentHealth() <= 0) return false;
+            if (player.getCurrentHealth() <= 0) return;
             if (monster.getCurrentHealth() <= 0) {
-                if (monster.getName().equals("Krille")) {
-                    winGame();
-                    quit();
-                }
                 monsters.remove(monster);
                 break;
             }
@@ -71,7 +69,12 @@ public class Game {
         System.out.println("GOOD JOB! You slayed " +  monster.getName() + ".");
         player.addXp(monster.getXp());
         player.levelUp(monster.getGold());
-        return true;
+        enemiesDefeated++;
+
+        if (monster.getName().equals("Krille")) {
+            winGame();
+            quit();
+        }
     }
 
 
@@ -92,9 +95,12 @@ public class Game {
 
     }
 
+    public int getEnemiesDefeated() {
+        return enemiesDefeated;
+    }
+
     private void winGame(){
 
-        printDelay("\"Thank you so much " + player.getName() + ". I finally won Frida's heart!");
         System.out.println("""
                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████▓▓░░░░▓▓▓▓████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
@@ -151,6 +157,11 @@ public class Game {
                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
                     
                 """);
+        printDelay("\"Thank you so much " + player.getName() + ". I finally won Frida's heart!\"");
+        System.out.println("Enemies defeated: " + enemiesDefeated);
+        System.out.println("Level: " + player.getLevel());
+        System.out.println("Inventory: ");
+        player.getInventory().showInventory();
         InputHandler in = new InputHandler();
         in.takeString();
     }
