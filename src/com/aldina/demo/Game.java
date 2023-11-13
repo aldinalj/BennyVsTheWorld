@@ -1,5 +1,8 @@
 package com.aldina.demo;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -98,6 +101,28 @@ public class Game {
     public int getEnemiesDefeated() {
         return enemiesDefeated;
     }
+    public void writeGameInfoToFile() {
+        try {
+
+            String filePath = "game_info.txt";
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+
+
+
+            writer.write(player.getName() + "'s stats:");
+            writer.write("\nEnemies defeated: " + enemiesDefeated);
+            writer.write("\nLevel: " + player.getLevel());
+            writer.write("\nInventory:\n");
+            writer.write(player.getInventory().getWeaponsString());
+            writer.write(player.getInventory().getPotionString());
+
+            writer.close();
+
+            System.out.println("Game info has been written to " + filePath);
+        } catch (IOException e) {
+
+        }
+    }
 
     private void winGame(){
 
@@ -158,10 +183,7 @@ public class Game {
                     
                 """);
         printDelay("\"Thank you so much " + player.getName() + ". I finally won Frida's heart!\"");
-        System.out.println("Enemies defeated: " + enemiesDefeated);
-        System.out.println("Level: " + player.getLevel());
-        System.out.println("Inventory: ");
-        player.getInventory().showInventory();
+        writeGameInfoToFile();
         InputHandler in = new InputHandler();
         in.takeString();
     }

@@ -33,10 +33,26 @@ public class Inventory {
         System.out.println(Colors.UNDERLINED + "⚜ Weapons ⚜:" + Colors.RESET);
 
         for (Weapon weapon : weapons) {
-            System.out.println(weaponNumber + ". " + weapon.getName() + Colors.RESET);
+            System.out.println(weaponNumber + ". " + weapon.getName());
             weaponNumber++;
         }
     }
+
+    public String getWeaponsString() {
+
+        StringBuilder sb = new StringBuilder();
+        int weaponNumber = 1;
+
+        sb.append("⚜ Weapons ⚜:" + "\n");
+
+        for (Weapon weapon : weapons) {
+            sb.append(weaponNumber + ". " + weapon.getName() + "\n");
+            weaponNumber++;
+        }
+        return sb.toString();
+    }
+
+
 
     public void showPotions() {
 
@@ -53,6 +69,22 @@ public class Inventory {
             potionNumber++;
         }
     }
+
+    public String getPotionString() {
+
+        StringBuilder sb = new StringBuilder();
+
+        int potionNumber = 1;
+
+        sb.append("\uD81A\uDD0D Potions \uD81A\uDD0D:\n");
+
+        for (Potion potion : potions) {
+            sb.append(potionNumber + ". " + potion.getName() + "\n");
+            potionNumber++;
+        }
+        return sb.toString();
+    }
+
 
     public List<Potion> getPotions() {
         return potions;

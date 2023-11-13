@@ -55,10 +55,8 @@ public class Main {
                        ⠀⠀⠀⠀⠀⠀⠀⠙⢶⠬⠴⢧⣤⣤⣤⣽⣬⡥⠞⠛⠛⠋⠉⠀⠀
                        YOU RUINED BENNY'S CHANCE TO BE WITH FRIDA⠀⠀⠀⠀⠀
                        """ + Colors.RESET);
-               System.out.println("Enemes defeated: " + game.getEnemiesDefeated());
-               System.out.println("Level " + player.getLevel());
-               System.out.println("Inventory: ");
-               player.getInventory().showInventory();
+
+               game.writeGameInfoToFile();
                System.exit(0);
            }
 
