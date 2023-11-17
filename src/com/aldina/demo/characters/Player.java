@@ -74,7 +74,7 @@ public class Player extends Character {
     }
     public void equipWeapon() {
 
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         inventory.showWeapons();
 
@@ -97,7 +97,7 @@ public class Player extends Character {
         }
     }
     public void usePotion() {
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         inventory.showPotions();
 

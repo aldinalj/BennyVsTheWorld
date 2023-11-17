@@ -9,7 +9,7 @@ import static com.aldina.demo.text.PrintDelay.printDelay;
 public class Main {
     public static void main(String[] args) {
 
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         System.out.println(Colors.PINK_BACKGROUND + "≪ °❈° ≫ BENNY VS THE WORLD ≪ °❈° ≫ " + Colors.RESET + "\n(A story based on Scott Pilgrim VS The World, different video games and JAVA23)");
 

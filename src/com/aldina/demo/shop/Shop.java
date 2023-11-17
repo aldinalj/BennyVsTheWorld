@@ -36,7 +36,7 @@ public class Shop {
     public void browse(Player player) {
 
         System.out.println("\nWelcome to the shop. What would you like to do?");
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
         boolean running = true;
 
         do {
@@ -58,7 +58,7 @@ public class Shop {
 
     private void browseWeapons(Player player) {
 
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         do {
 
@@ -92,7 +92,7 @@ public class Shop {
 
     private void buyWeapon(Player player, Weapon weapon) {
 
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         do {
             System.out.println("1. Buy " + weapon.getName() + "\n0. Go back ⏎");
@@ -119,7 +119,7 @@ public class Shop {
 
     private void browsePotions(Player player) {
 
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         do {
 
@@ -155,7 +155,7 @@ public class Shop {
     }
 
     private void buyPotion(Player player, Potion potion) {
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
         do {
             System.out.println("1. Buy " + potion.getName() + "\n0. Go back ⏎");

@@ -33,7 +33,7 @@ public class Game {
         Monster monster = getMonster();
         printDelay(monster.getLore());
         monster.showStatus();
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
 
 
         while (true) {
@@ -190,7 +190,7 @@ public class Game {
                 """);
         printDelay("\"Thank you so much " + player.getName() + ". I finally won Frida's heart!\"");
         writeGameInfoToFile();
-        InputHandler in = new InputHandler();
+        InputHandler in = InputHandler.instance();
         in.takeString();
     }
 
