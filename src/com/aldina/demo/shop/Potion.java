@@ -1,7 +1,4 @@
-package com.aldina.demo;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.aldina.demo.shop;
 
 public class Potion {
 

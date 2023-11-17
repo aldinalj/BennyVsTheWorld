@@ -1,13 +1,8 @@
-aldina's stats:
-Enemies defeated: 1
-Level: 1
+Jock1boi's stats:
+Enemies defeated: 4
+Level: 3
 Inventory:
 ⚜ Weapons ⚜:
 1. Fists
-2. Shock Arrows
-3. Spear
-4. Magic Staff
+2. Magic Staff
 𖤍 Potions 𖤍:
-1. Health potion
-1. Strength potion
-1. SuperClass potion

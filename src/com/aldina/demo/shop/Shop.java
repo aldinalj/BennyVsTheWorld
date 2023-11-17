@@ -1,12 +1,13 @@
-package com.aldina.demo;
+package com.aldina.demo.shop;
 
+import com.aldina.demo.Inventory;
 import com.aldina.demo.characters.Player;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.text.InputHandler;
-import com.aldina.demo.weapons.MagicStaff;
-import com.aldina.demo.weapons.ShockArrows;
-import com.aldina.demo.weapons.Spear;
-import com.aldina.demo.weapons.Weapon;
+import com.aldina.demo.shop.weapons.MagicStaff;
+import com.aldina.demo.shop.weapons.ShockArrows;
+import com.aldina.demo.shop.weapons.Spear;
+import com.aldina.demo.shop.weapons.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;

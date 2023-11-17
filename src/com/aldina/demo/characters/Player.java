@@ -3,8 +3,8 @@ package com.aldina.demo.characters;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.text.InputHandler;
 import com.aldina.demo.Inventory;
-import com.aldina.demo.Potion;
-import com.aldina.demo.weapons.Fists;
+import com.aldina.demo.shop.Potion;
+import com.aldina.demo.shop.weapons.Fists;
 
 import java.util.Random;
 

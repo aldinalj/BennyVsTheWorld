@@ -1,7 +1,8 @@
 package com.aldina.demo;
 
+import com.aldina.demo.shop.Potion;
 import com.aldina.demo.text.Colors;
-import com.aldina.demo.weapons.Weapon;
+import com.aldina.demo.shop.weapons.Weapon;
 
 import java.util.ArrayList;
 import java.util.List;

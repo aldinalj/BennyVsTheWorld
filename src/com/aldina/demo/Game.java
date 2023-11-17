@@ -8,9 +8,10 @@ import java.util.Random;
 
 import com.aldina.demo.characters.Monster;
 import com.aldina.demo.characters.Player;
+import com.aldina.demo.shop.Shop;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.text.InputHandler;
-import com.aldina.demo.weapons.Fists;
+import com.aldina.demo.shop.weapons.Fists;
 
 import static com.aldina.demo.text.PrintDelay.printDelay;
 
@@ -30,6 +31,7 @@ public class Game {
 
     public void act() {
         Monster monster = getMonster();
+        printDelay(monster.getLore());
         monster.showStatus();
         InputHandler in = new InputHandler();
 
@@ -93,14 +95,18 @@ public class Game {
             Monster randomMonster = monsters.get(randomIndex);
             return randomMonster;
         } else {
-            return new Monster("Krille",2,2,2,100,2,2,0, new Fists("Strong fists", 0));
+            String krilleLore = """
+                Krille was a pivotal figure in Frida's love life. They crossed paths in Gothenburg while attending the same school, and Frida was deeply impressed by his programming skills. She became
+                his source of encouragement and motivation to pursue his dreams, particularly a career as a teacher. Frida wholeheartedly believed in Krille's talents and aspirations, urging him to share
+                them with others. While Frida discovered her dream job in Gothenburg, Krille found the perfect opportunity, albeit one that would be in a different city, Liljeholmen, Stockholm.
+                This significant geographical distance posed a challenge for their relationship. Krille, ultimately, decided that a long-distance relationship wasn't suitable for his new adventure in Stockholm.
+                The decision was heartbreaking for Frida, leaving her with deep feelings of loss. Yet, Krille, too, missed her in his own way.
+                """;
+            return new Monster("Krille",2,2,2,100,2,2,0, new Fists("Strong fists", 0), krilleLore);
         }
 
     }
 
-    public int getEnemiesDefeated() {
-        return enemiesDefeated;
-    }
     public void writeGameInfoToFile() {
         try {
 

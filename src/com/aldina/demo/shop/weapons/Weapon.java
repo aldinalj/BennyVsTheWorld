@@ -1,4 +1,4 @@
-package com.aldina.demo.weapons;
+package com.aldina.demo.shop.weapons;
 
 import com.aldina.demo.characters.Character;
 

@@ -1,16 +1,18 @@
-package com.aldina.demo.weapons;
+package com.aldina.demo.shop.weapons;
 
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.characters.Character;
 
 import java.util.Random;
 
-public class Spear implements Weapon {
+import static com.aldina.demo.text.PrintDelay.printDelay;
+
+public class MagicStaff implements Weapon {
 
     private String name;
     private int price;
 
-    public Spear (String name, int price) {
+    public MagicStaff(String name, int price) {
         this.name = name;
         this.price = price;
 
@@ -20,6 +22,7 @@ public class Spear implements Weapon {
         System.out.println("Weapon: " + getName());
         System.out.println("Price: " + getPrice());
     }
+
 
     @Override
     public String getName() {
@@ -33,7 +36,7 @@ public class Spear implements Weapon {
 
     @Override
     public int attack(Character attacker, Character target) {
-        System.out.println("\uD800\uDCC6 Spear lunged!");
+        printDelay("*.·:·.✧ ✦ ✧.·:·.*  Beams fired!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
         if (new Random().nextInt(100) < attacker.getIntelligence()) {
             damage *= 2;
@@ -50,14 +53,8 @@ public class Spear implements Weapon {
         return damage;
     }
 
-
     @Override
     public Weapon copy() {
-        return new Spear(name, price);
+        return new MagicStaff(name, price);
     }
 }
-
-
-
-
-
