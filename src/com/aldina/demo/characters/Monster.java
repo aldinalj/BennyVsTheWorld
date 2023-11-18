@@ -1,5 +1,6 @@
 package com.aldina.demo.characters;
 
+import com.aldina.demo.Weakness;
 import com.aldina.demo.shop.weapons.Fists;
 import com.aldina.demo.shop.weapons.Weapon;
 
@@ -9,7 +10,7 @@ import java.util.List;
 public class Monster extends Character {
 
     private String lore;
-    public Monster(String name, int strength, int intelligence, int agility, int totalHealth, int baseDamage, int xp, int gold, Weapon equippedWeapon, String lore) {
+    public Monster(String name, int strength, int intelligence, int agility, int totalHealth, int baseDamage, int xp, int gold, Weapon equippedWeapon, String lore, Weakness weakness) {
         this.name = name;
         this.strength = strength;
         this.intelligence = intelligence;
@@ -21,6 +22,7 @@ public class Monster extends Character {
         this.gold = gold;
         this.equippedWeapon = equippedWeapon;
         this.lore = lore;
+        this.weakness = weakness;
     }
 
     @Override
@@ -77,12 +79,12 @@ public class Monster extends Character {
                 """;
 
         List<Monster> monsterList = new ArrayList<>();
-        monsterList.add(new Monster("Anton", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), antonLore));
-        monsterList.add(new Monster("Sidon", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), sidonLore));
-        monsterList.add(new Monster("Nabooru", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), nabooruLore));
-        monsterList.add(new Monster("Pudge", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), pudgeLore));
-        monsterList.add(new Monster("Herobrine", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), herobrineLore));
-        monsterList.add(new Monster("Bowser", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), bowserLore));
+        monsterList.add(new Monster("Anton", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), antonLore, Weakness.FLYING));
+        monsterList.add(new Monster("Sidon", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), sidonLore, Weakness.ELECTRIC));
+        monsterList.add(new Monster("Nabooru", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), nabooruLore, Weakness.DARK));
+        monsterList.add(new Monster("Pudge", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), pudgeLore, Weakness.FAIRY));
+        monsterList.add(new Monster("Herobrine", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), herobrineLore, Weakness.LIGHT));
+        monsterList.add(new Monster("Bowser", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), bowserLore, Weakness.WATER));
 
         return monsterList;
     }

@@ -29,7 +29,7 @@ public class Game {
     }
 
 
-    public void act() {
+    public boolean act() {
         Monster monster = getMonster();
         printDelay(monster.getLore());
         monster.showStatus();
@@ -55,7 +55,7 @@ public class Game {
                 case 5 -> {
                     if (player.flee()) {
                         monster.restoreHealth();
-                        return;
+                        return true;
                     }
                     else {
                         monster.attack(player);
@@ -64,7 +64,7 @@ public class Game {
                 case 6 -> shopInstance.browse(player);
                 default -> System.out.println(Colors.BOLD + Colors.RED + "⚠ Invalid input. Please try again." + Colors.RESET);
             }
-            if (player.getCurrentHealth() <= 0) return;
+            if (player.getCurrentHealth() <= 0) return false;
             if (monster.getCurrentHealth() <= 0) {
                 monsters.remove(monster);
                 break;
@@ -80,6 +80,8 @@ public class Game {
             winGame();
             quit();
         }
+
+        return true;
     }
 
 
@@ -102,7 +104,7 @@ public class Game {
                 This significant geographical distance posed a challenge for their relationship. Krille, ultimately, decided that a long-distance relationship wasn't suitable for his new adventure in Stockholm.
                 The decision was heartbreaking for Frida, leaving her with deep feelings of loss. Yet, Krille, too, missed her in his own way.
                 """;
-            return new Monster("Krille",2,2,2,100,2,2,0, new Fists("Strong fists", 0), krilleLore);
+            return new Monster("Krille",2,2,2,100,2,2,0, new Fists("Strong fists", 0), krilleLore, Weakness.MEMES);
         }
 
     }

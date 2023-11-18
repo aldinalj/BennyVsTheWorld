@@ -1,8 +1,7 @@
-Jock1boi's stats:
-Enemies defeated: 4
-Level: 3
+h's stats:
+Enemies defeated: 0
+Level: 1
 Inventory:
 ⚜ Weapons ⚜:
 1. Fists
-2. Magic Staff
 𖤍 Potions 𖤍:

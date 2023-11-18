@@ -1,25 +1,27 @@
 package com.aldina.demo.shop.weapons;
 
-import com.aldina.demo.text.Colors;
+import com.aldina.demo.Weakness;
 import com.aldina.demo.characters.Character;
+import com.aldina.demo.text.Colors;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class Spear implements Weapon {
+public class MemeCannon implements Weapon {
 
     private String name;
-    private int price;
+    private List<Weakness> specialities = new ArrayList<>();
 
-    public Spear (String name, int price) {
+    public MemeCannon(String name) {
         this.name = name;
-        this.price = price;
-
+        specialities.add(Weakness.MEMES);
     }
 
     public void displayInfo() {
         System.out.println("Weapon: " + getName());
-        System.out.println("Price: " + getPrice());
     }
+
 
     @Override
     public String getName() {
@@ -28,13 +30,21 @@ public class Spear implements Weapon {
 
     @Override
     public int getPrice() {
-        return price;
+        return 0;
     }
 
     @Override
     public int attack(Character attacker, Character target) {
-        System.out.println("\uD800\uDCC6 Spear lunged!");
+        System.out.println("RANDOMIZE MEME");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
+
+        for(Weakness speciality : specialities) {
+            if(target.getWeakness() == speciality) {
+                damage *= 2;
+                System.out.println(target.getName() + "'s weakness was exploited!");
+            }
+        }
+
         if (new Random().nextInt(100) < attacker.getIntelligence()) {
             damage *= 2;
             System.out.println(Colors.RED_BACKGROUND + Colors.UNDERLINED + "! CRITICAL HIT !" + Colors.RESET);
@@ -46,18 +56,12 @@ public class Spear implements Weapon {
         } else {
             System.out.println(Colors.RED + attacker.getName() + " caused " + damage + " damage!\n" + Colors.RESET);
         }
-
         return damage;
     }
 
-
     @Override
     public Weapon copy() {
-        return new Spear(name, price);
+        return new MemeCannon(name);
     }
+
 }
-
-
-
-
-

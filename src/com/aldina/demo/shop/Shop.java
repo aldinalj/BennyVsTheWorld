@@ -6,7 +6,7 @@ import com.aldina.demo.text.Colors;
 import com.aldina.demo.text.InputHandler;
 import com.aldina.demo.shop.weapons.MagicStaff;
 import com.aldina.demo.shop.weapons.ShockArrows;
-import com.aldina.demo.shop.weapons.Spear;
+import com.aldina.demo.shop.weapons.WaterSword;
 import com.aldina.demo.shop.weapons.Weapon;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class Shop {
 
         List<Weapon> weaponList = new ArrayList<>();
         weaponList.add(new ShockArrows("Shock Arrows", 60));
-        weaponList.add(new Spear("Spear", 20));
+        weaponList.add(new WaterSword("Water Sword", 20));
         weaponList.add(new MagicStaff("Magic Staff", 80));
 
         this.shopInventory = new Inventory(potionList, weaponList);

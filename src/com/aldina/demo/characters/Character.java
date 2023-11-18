@@ -1,4 +1,5 @@
 package com.aldina.demo.characters;
+import com.aldina.demo.Weakness;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.shop.weapons.Weapon;
 
@@ -14,6 +15,7 @@ public class Character {
     protected int baseDamage;
     protected int gold;
     protected Weapon equippedWeapon;
+    protected Weakness weakness;
 
     public void showStatus() {
         System.out.println(Colors.BLACK_BACKGROUND + "Status for " + name + ":\t" + Colors.RESET);
@@ -71,4 +73,7 @@ public class Character {
         currentHealth = totalHealth;
     }
 
+    public Weakness getWeakness() {
+        return weakness;
+    }
 }

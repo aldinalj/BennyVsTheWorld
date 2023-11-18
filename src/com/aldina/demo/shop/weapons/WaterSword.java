@@ -8,27 +8,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.aldina.demo.text.PrintDelay.printDelay;
-
-public class MagicStaff implements Weapon {
+public class WaterSword implements Weapon {
 
     private String name;
     private int price;
     private List<Weakness> specialities = new ArrayList<>();
 
-    public MagicStaff(String name, int price) {
+    public WaterSword(String name, int price) {
         this.name = name;
         this.price = price;
-        specialities.add(Weakness.LIGHT);
-        specialities.add(Weakness.FAIRY);
-
+        specialities.add(Weakness.WATER);
+        specialities.add(Weakness.DARK);
     }
 
     public void displayInfo() {
         System.out.println("Weapon: " + getName());
         System.out.println("Price: " + getPrice());
     }
-
 
     @Override
     public String getName() {
@@ -42,11 +38,11 @@ public class MagicStaff implements Weapon {
 
     @Override
     public int attack(Character attacker, Character target) {
-        printDelay("*.·:·.✧ ✦ ✧.·:·.*  Beams fired!");
+        System.out.println("Water Sword swooshed!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
 
         for(Weakness speciality : specialities) {
-            if(speciality == target.getWeakness()) {
+            if(target.getWeakness() == speciality) {
                 damage *= 2;
                 System.out.println(target.getName() + "'s weakness was exploited!");
             }
@@ -67,8 +63,14 @@ public class MagicStaff implements Weapon {
         return damage;
     }
 
+
     @Override
     public Weapon copy() {
-        return new MagicStaff(name, price);
+        return new WaterSword(name, price);
     }
 }
+
+
+
+
+
