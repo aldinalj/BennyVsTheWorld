@@ -1,5 +1,6 @@
 package com.aldina.test;
 
+import com.aldina.demo.Weakness;
 import com.aldina.demo.characters.Character;
 import com.aldina.demo.characters.Monster;
 import com.aldina.demo.characters.Player;
@@ -12,7 +13,7 @@ public class CharacterTest {
     @Test
     public void testAttack(){
         Character player = new Player("Player",1,10,0,0,1,1,1,1);
-        Character monster = new Monster("Monster",1,1,1,100,1,1,1,new Fists("Fists",1),"");
+        Character monster = new Monster("Monster",1,1,1,100,1,1,1,new Fists("Fists",1),"", Weakness.MEMES);
 
         player.attack(monster);
 

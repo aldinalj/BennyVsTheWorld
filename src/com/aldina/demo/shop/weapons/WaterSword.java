@@ -63,6 +63,11 @@ public class WaterSword implements Weapon {
         return damage;
     }
 
+    @Override
+    public List<Weakness> getSpecialties() {
+        return specialities;
+    }
+
 
     @Override
     public Weapon copy() {

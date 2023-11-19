@@ -33,6 +33,7 @@ public class MemeCannon implements Weapon {
         return 0;
     }
 
+
     @Override
     public int attack(Character attacker, Character target) {
         System.out.println("RANDOMIZE MEME");
@@ -57,6 +58,11 @@ public class MemeCannon implements Weapon {
             System.out.println(Colors.RED + attacker.getName() + " caused " + damage + " damage!\n" + Colors.RESET);
         }
         return damage;
+    }
+
+    @Override
+    public List<Weakness> getSpecialties() {
+        return specialities;
     }
 
     @Override

@@ -21,7 +21,6 @@ public class MagicStaff implements Weapon {
         this.price = price;
         specialities.add(Weakness.LIGHT);
         specialities.add(Weakness.FAIRY);
-
     }
 
     public void displayInfo() {
@@ -65,6 +64,11 @@ public class MagicStaff implements Weapon {
         }
 
         return damage;
+    }
+
+    @Override
+    public List<Weakness> getSpecialties() {
+        return specialities;
     }
 
     @Override

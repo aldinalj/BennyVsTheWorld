@@ -1,8 +1,11 @@
 package com.aldina.demo.shop.weapons;
 
+import com.aldina.demo.Weakness;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.characters.Character;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import static com.aldina.demo.text.PrintDelay.printDelay;
@@ -52,6 +55,11 @@ public class Fists implements Weapon{
         }
 
         return damage;
+    }
+
+    @Override
+    public List<Weakness> getSpecialties() {
+        return new ArrayList<>();
     }
 
     @Override

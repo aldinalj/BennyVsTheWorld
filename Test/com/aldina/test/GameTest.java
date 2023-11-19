@@ -5,6 +5,8 @@ import com.aldina.demo.characters.Player;
 import com.aldina.demo.text.InputHandler;
 import org.junit.Test;
 
+import java.io.*;
+
 import static org.junit.Assert.assertEquals;
 
 public class GameTest {
@@ -19,4 +21,5 @@ public class GameTest {
 
         assertEquals(false, result);
     }
+
 }

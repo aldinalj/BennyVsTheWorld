@@ -78,7 +78,7 @@ public class Player extends Character {
 
         inventory.showWeapons();
 
-        System.out.println("0. Go back");
+        System.out.println(Colors.PINKst + "0. Go back" + Colors.RESET);
 
         System.out.println("Which weapon would you like to equip?");
         System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
@@ -101,7 +101,7 @@ public class Player extends Character {
 
         inventory.showPotions();
 
-        System.out.println("0. Go back");
+        System.out.println(Colors.PINKst + "0. Go back" + Colors.RESET);
 
         System.out.println("Which potion would you like to consume?");
         System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);

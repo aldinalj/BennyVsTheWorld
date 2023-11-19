@@ -64,6 +64,11 @@ public class ShockArrows implements Weapon {
     }
 
     @Override
+    public List<Weakness> getSpecialties() {
+        return specialities;
+    }
+
+    @Override
     public Weapon copy() {
         return new ShockArrows(name, price);
     }

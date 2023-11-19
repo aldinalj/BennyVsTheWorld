@@ -79,12 +79,12 @@ public class Monster extends Character {
                 """;
 
         List<Monster> monsterList = new ArrayList<>();
-        monsterList.add(new Monster("Anton", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), antonLore, Weakness.FLYING));
-        monsterList.add(new Monster("Sidon", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), sidonLore, Weakness.ELECTRIC));
-        monsterList.add(new Monster("Nabooru", 13, 13, 13, 50,2, 50, 50, new Fists("Fists",0), nabooruLore, Weakness.DARK));
-        monsterList.add(new Monster("Pudge", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), pudgeLore, Weakness.FAIRY));
-        monsterList.add(new Monster("Herobrine", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), herobrineLore, Weakness.LIGHT));
-        monsterList.add(new Monster("Bowser", 13, 13, 13, 50, 2,50, 50, new Fists("Fists",0), bowserLore, Weakness.WATER));
+        monsterList.add(new Monster("Anton", 10, 10, 10, 50,2, 50, 50, new Fists("Fists",0), antonLore, Weakness.FLYING));
+        monsterList.add(new Monster("Sidon", 13, 13, 13, 60,2, 70, 75, new Fists("Fists",0), sidonLore, Weakness.ELECTRIC));
+        monsterList.add(new Monster("Nabooru", 15, 15, 15, 70,3, 80, 80, new Fists("Fists",0), nabooruLore, Weakness.DARK));
+        monsterList.add(new Monster("Pudge", 17, 10, 10, 100, 4,90, 100, new Fists("Fists",0), pudgeLore, Weakness.FAIRY));
+        monsterList.add(new Monster("Herobrine", 17, 12, 17, 120, 4,110, 120, new Fists("Fists",0), herobrineLore, Weakness.LIGHT));
+        monsterList.add(new Monster("Bowser", 20, 10, 12, 140, 6,120, 140, new Fists("Fists",0), bowserLore, Weakness.WATER));
 
         return monsterList;
     }

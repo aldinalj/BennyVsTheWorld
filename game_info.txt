@@ -1,5 +1,5 @@
-h's stats:
-Enemies defeated: 0
+Player's stats:
+Enemies defeated: 5
 Level: 1
 Inventory:
 ⚜ Weapons ⚜:

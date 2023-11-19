@@ -19,15 +19,15 @@ public class Shop {
     public Shop() {
 
         List<Potion> potionList = new ArrayList<>();
-        potionList.add(new Potion("Health potion", 50, 0, 0, 0, 50));
-        potionList.add(new Potion("Strength potion", 0, 2, 0, 0, 50));
-        potionList.add(new Potion("Agility potion", 0, 0, 2, 0, 50));
-        potionList.add(new Potion("Intelligence potion", 0, 0, 0, 2, 50));
+        potionList.add(new Potion("Health potion", 50, 0, 0, 0, 100));
+        potionList.add(new Potion("Strength potion", 0, 2, 0, 0, 100));
+        potionList.add(new Potion("Agility potion", 0, 0, 2, 0, 100));
+        potionList.add(new Potion("Intelligence potion", 0, 0, 0, 2, 100));
         potionList.add(new Potion("SuperClass potion", 50, 2, 2, 2, 300));
 
         List<Weapon> weaponList = new ArrayList<>();
-        weaponList.add(new ShockArrows("Shock Arrows", 60));
-        weaponList.add(new WaterSword("Water Sword", 20));
+        weaponList.add(new ShockArrows("Shock Arrows", 80));
+        weaponList.add(new WaterSword("Water Sword", 80));
         weaponList.add(new MagicStaff("Magic Staff", 80));
 
         this.shopInventory = new Inventory(potionList, weaponList);
@@ -40,7 +40,7 @@ public class Shop {
         boolean running = true;
 
         do {
-            System.out.println("\n1. ㈣ View inventory ㈣\n2. ⚜ Buy weapons ⚜ \n3. \uD81A\uDD0D Buy potions \uD81A\uDD0D \n0. Go back ⏎");
+            System.out.println("\n1. ㈣ View inventory ㈣\n2. ⚜ Buy weapons ⚜ \n3. \uD81A\uDD0D Buy potions \uD81A\uDD0D \n"  + Colors.PINKst +  "0. Go back ⏎" + Colors.RESET);
             System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
             switch (in.takeString()) {
                 case "1" -> {
@@ -67,11 +67,12 @@ public class Shop {
             int weaponNumber = 1;
             for (Weapon weapon : shopInventory.getWeapons()) {
                 System.out.println("\n" + weaponNumber + ". " + weapon.getName() + Colors.RESET);
-                System.out.print(Colors.YELLOW + " Price: " + weapon.getPrice() + Colors.RESET);
+                System.out.println("Specialties: " + weapon.getSpecialties());
+                System.out.println(Colors.YELLOW + " Price: " + weapon.getPrice() + Colors.RESET);
                 weaponNumber++;
             }
 
-            System.out.println("\n0. Go back");
+            System.out.println(Colors.PINKst + "\n0. Go back" + Colors.RESET);
             System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
 
             int choice = in.takeNumber();
@@ -95,7 +96,7 @@ public class Shop {
         InputHandler in = InputHandler.instance();
 
         do {
-            System.out.println("1. Buy " + weapon.getName() + "\n0. Go back ⏎");
+            System.out.println("1. Buy " + weapon.getName() + Colors.PINKst + "\n0. Go back ⏎" + Colors.RESET);
             System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
             switch (in.takeString()) {
                 case "1" -> {
@@ -136,7 +137,7 @@ public class Shop {
                 potionNumber++;
             }
 
-            System.out.println("\n0. Go back ⏎");
+            System.out.println(Colors.PINKst + "\n0. Go back ⏎" + Colors.RESET);
             System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
 
 
@@ -158,7 +159,7 @@ public class Shop {
         InputHandler in = InputHandler.instance();
 
         do {
-            System.out.println("1. Buy " + potion.getName() + "\n0. Go back ⏎");
+            System.out.println("1. Buy " + potion.getName() + Colors.PINKst + "\n0. Go back ⏎" + Colors.RESET);
             System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
 
             switch (in.takeString()) {

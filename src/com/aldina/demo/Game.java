@@ -8,7 +8,6 @@ import java.util.Random;
 
 import com.aldina.demo.characters.Monster;
 import com.aldina.demo.characters.Player;
-import com.aldina.demo.shop.Shop;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.text.InputHandler;
 import com.aldina.demo.shop.weapons.Fists;
@@ -20,7 +19,6 @@ public class Game {
     private int enemiesDefeated;
     private Player player;
     private List<Monster> monsters;
-    private Shop shopInstance = new Shop();
 
     public Game(Player player) {
         this.player = player;
@@ -37,7 +35,7 @@ public class Game {
 
 
         while (true) {
-            System.out.println("What would you like to do?\n1. ⚔ Attack ⚔\n2. ⚜ Equip weapon ⚜\n3. \uD81A\uDD0D Consume potion \uD81A\uDD0D \n4. ↕ Get status ↕\n5. ꩜ Flee ꩜\n6. ⾕ Visit shop ⾕");
+            System.out.println("What would you like to do?\n1. ⚔ Attack ⚔\n2. ⚜ Equip weapon ⚜\n3. \uD81A\uDD0D Consume potion \uD81A\uDD0D \n4. ↕ Get status ↕\n5. ꩜ Flee ꩜");
             System.out.print(Colors.GREENin + "❁༺ " + Colors.RESET);
 
             switch (in.takeNumber()) {
@@ -61,7 +59,6 @@ public class Game {
                         monster.attack(player);
                     }
                 }
-                case 6 -> shopInstance.browse(player);
                 default -> System.out.println(Colors.BOLD + Colors.RED + "⚠ Invalid input. Please try again." + Colors.RESET);
             }
             if (player.getCurrentHealth() <= 0) return false;
@@ -104,7 +101,7 @@ public class Game {
                 This significant geographical distance posed a challenge for their relationship. Krille, ultimately, decided that a long-distance relationship wasn't suitable for his new adventure in Stockholm.
                 The decision was heartbreaking for Frida, leaving her with deep feelings of loss. Yet, Krille, too, missed her in his own way.
                 """;
-            return new Monster("Krille",2,2,2,100,2,2,0, new Fists("Strong fists", 0), krilleLore, Weakness.MEMES);
+            return new Monster("Krille",25,18,18,190,8,2,0, new Fists("Strong fists", 0), krilleLore, Weakness.MEMES);
         }
 
     }
@@ -114,8 +111,6 @@ public class Game {
 
             String filePath = "game_info.txt";
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
-
-
 
             writer.write(player.getName() + "'s stats:");
             writer.write("\nEnemies defeated: " + enemiesDefeated);
