@@ -23,7 +23,7 @@ public class Main {
         System.out.print(Colors.GREENin + "➺ " + Colors.RESET);
 
         String playerName = in.takeString();
-        Player player = new Player(playerName, 1, 13, 13, 13, 120, 0, 2, 200);
+        Player player = new Player(playerName, 1, 13, 13, 13, 120, 0, 2, 50);
         Game game = new Game(player);
         LoreMaster loreMaster = new LoreMaster();
         Shop shopInstance = new Shop();

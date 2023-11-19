@@ -6,7 +6,7 @@ public class PrintDelay {
         for (char c : str.toCharArray()) {
             System.out.print(c);
             try {
-                Thread.sleep(0);
+                Thread.sleep(15);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

@@ -274,7 +274,8 @@ public class TempleOfKnowledge {
 
         boolean running = true;
         do {
-            System.out.println("You found a chest! On it says \"10 digits is required to open the chest. Remember that knowledge is key...\"\nCan't guess? " + Colors.PINKst + "\n0. Continue levels ⏎" + Colors.RESET);
+            System.out.println("You found a chest! On it says \"10 digits is required to open the chest. Remember that knowledge is key...\"\nCan't guess? " + Colors.PINKst + "\n0. Go back ⏎" + Colors.RESET + " Otherwise type in the 10 digits.");
+            System.out.print(Colors.GREENin + "❁༺  " + Colors.RESET);
             switch (in.takeString()) {
                 case "3322131131" -> {
                     System.out.println("WOW! You unlocked the chest! Here's your rewards:\n+400 gold + meme cannon");
