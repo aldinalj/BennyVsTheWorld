@@ -21,11 +21,6 @@ public class WaterSword implements Weapon {
         specialities.add(Weakness.DARK);
     }
 
-    public void displayInfo() {
-        System.out.println("Weapon: " + getName());
-        System.out.println("Price: " + getPrice());
-    }
-
     @Override
     public String getName() {
         return name;
@@ -38,7 +33,7 @@ public class WaterSword implements Weapon {
 
     @Override
     public int attack(Character attacker, Character target) {
-        System.out.println("Water Sword swooshed!");
+        System.out.println("====)------------  ｡･ﾟﾟ･ Water Sword swooshed!");
         int damage = attacker.getBaseDamage() + attacker.getStrength();
 
         for(Weakness speciality : specialities) {

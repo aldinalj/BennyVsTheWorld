@@ -14,7 +14,6 @@ public class Colors {
     public static final String ORANGE = "\033[38;5;130m";
     public static final String PURPLE = "\033[38;5;90m";
     public static final String BLUE = "\033[38;5;62m";
-    public static final String BLACK = "\033[38;5;232m";
     public static final String PINKst = "\033[38;5;205m";
     public static final String GREENin = "\033[38;5;71m";
 

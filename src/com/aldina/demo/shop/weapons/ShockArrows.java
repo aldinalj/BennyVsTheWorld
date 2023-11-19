@@ -21,12 +21,6 @@ public class ShockArrows implements Weapon {
         specialities.add(Weakness.FLYING);
     }
 
-    public void displayInfo() {
-        System.out.println("Weapon: " + getName());
-        System.out.println("Price: " + getPrice());
-    }
-
-
     @Override
     public String getName() {
         return name;

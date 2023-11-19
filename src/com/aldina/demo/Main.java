@@ -27,18 +27,18 @@ public class Main {
         Game game = new Game(player);
         LoreMaster loreMaster = new LoreMaster();
         Shop shopInstance = new Shop();
+        TempleOfKnowledge temple = new TempleOfKnowledge(player);
 
         printDelay("\nWelcome " + Colors.GREENin + playerName + Colors.RESET + ".\nBefore we begin the battles of Frida's heart, you should know a few things. \nWhen this pops up "
-                + Colors.GREENin + "❁༺" + Colors.RESET + " you have to make to make a choice. \nYou will fight Frida's exs in a randomized order. \nI highly recommend you speak with the " +
-                "lore master to best know how to defeat them.\nFor every 100xp you'll level up and everytime you level up you'll gain +2 in agility, strength & intelligence. \nThere is a " +
-                "temple of knowledge where you can achieve awards if you answer the questions right. \nAs a wise Swedish man once said " +
+                + Colors.GREENin + "❁༺" + Colors.RESET + " you have to make to make a choice. \nYou will fight Frida's exs in a randomized order.\nFor every 100xp you'll level up and everytime you level up you'll gain +2 in agility, strength & intelligence. \nThere is a " +
+                "temple of knowledge where you can get gold if you answer the questions right. \nAs a wise Swedish man once said " +
                 "\"Fuskare förlorar privilegiet att skryta\", which roughly translates to \n\"Cheaters loses the privilege to brag\", so make sure you actually only use the knowledge you" +
                 " know to answer the questions. \nThere's a shop filled with weapons and potions. Talk to the lore master for hints to the best weapons to use in battle. \nHere! Take these 50 gold" +
                 " coins that you can use in the shop.\nDon't forget to fix soft-wrap in the console for a non-horrendous reading experience.\nGood Luck!\n");
 
         do {
 
-            System.out.println("1. ⚔ Meet Frida's ex ⚔ \n2. ↕ Show status ↕\n3. ♔ Talk to lore master ♔\n4. ⾕ Visit shop ⾕" + Colors.PINKst + "\n0. Quit game" + Colors.RESET);
+            System.out.println("1. ⚔ Meet Frida's ex ⚔ \n2. ↕ Show status ↕\n3. ♔ Talk to lore master ♔\n4. ⾕ Visit shop ⾕\n5. ꕥ Temple Of Knowledge ꕥ" + Colors.PINKst + "\n0. Quit game" + Colors.RESET);
             System.out.print(Colors.GREENin + "❁༺  " + Colors.RESET);
             switch (in.takeNumber()) {
                 case 1 -> {
@@ -74,6 +74,7 @@ public class Main {
                 case 2 -> player.showStatus();
                 case 3 -> loreMaster.loreMaster();
                 case 4 -> shopInstance.browse(player);
+                case 5 -> temple.playLevel();
                 case 0 -> {
                     printDelay("Wow, quitting already? I mean, who needs progress in a game, right? You're like a master strategist, " +
                             "in your own unique way. It's a bit pathetic, but hey, quitting is the new winning, I guess. Go ahead, make that grand exit!");

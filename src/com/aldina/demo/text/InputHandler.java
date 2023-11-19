@@ -1,12 +1,13 @@
 package com.aldina.demo.text;
 
+import com.aldina.demo.characters.Player;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
 
 public class InputHandler {
     private static InputHandler instance = null;
-
     public static InputHandler instance() {
         if(instance == null) {
             instance = new InputHandler();
@@ -37,16 +38,9 @@ public class InputHandler {
         }
     }
 
-    public boolean hasNumber() {
-        return in.hasNextInt();
-    }
-
     public String takeString() {
         return in.nextLine();
     }
 
-    public void clear() {
-        in = new Scanner(System.in);
-    }
 
 }

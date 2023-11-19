@@ -61,7 +61,7 @@ public class InventoryTest {
         inventory.addWeapon(magicStaff);
             List<Weapon> weaponsInventory = inventory.getWeapons();
 
-        assertEquals(magicStaff.getName(), weaponsInventory.get(0).getName());
+        assertEquals("MS", weaponsInventory.get(0).getName());
     }
 
     @Test

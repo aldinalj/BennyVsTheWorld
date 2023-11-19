@@ -130,6 +130,14 @@ public class Game {
 
     private void winGame(){
 
+        printDelay("After the intense battles against Frida's seven exes, Benny and Frida found themselves standing amidst the debris, catching their breaths in the aftermath of the chaos. The air was thick with a mix of relief and something deeper—an unspoken understanding of the strength they'd discovered in each other throughout their journey.\n" +
+                "Frida looked at Benny with a mix of emotions swirling in her eyes—gratitude, respect, and a newfound admiration that had blossomed through the trials they faced together. There was a moment of quiet between them, each understanding the significance of their shared experiences.\n" +
+                "With a faint smile, Benny broke the silence. \"Frida, this journey has been something else. I've learned a lot about myself, about us,\" he confessed, his tone reflective yet filled with warmth.\n" +
+                "Frida nodded, her gaze meeting his. \"Benny, you've shown me what it means to stand by someone, to fight for what you believe in,\" she replied softly.\n" +
+                "Their eyes met, and in that fleeting moment, they both understood the depth of their connection. \n" +
+                "Hand in hand, they walked away from the battlegrounds, leaving behind the remnants of their trials. As they stepped into the evening, a sense of peace settled between them—a shared understanding that their journey wasn't just about the battles fought, but about the unspoken connection they now carried in their hearts.\n" +
+                "With each step forward, Benny and Frida embarked on a new chapter—a story of resilience, mutual understanding, and a bond that had withstood the ultimate test. They walked into the night, their intertwined destinies shining brightly against the canvas of a starry sky, carrying with them the lessons learned and the strength gained from their remarkable journey together.\n");
+
         System.out.println("""
                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
                 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██████████████▓▓░░░░▓▓▓▓████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
