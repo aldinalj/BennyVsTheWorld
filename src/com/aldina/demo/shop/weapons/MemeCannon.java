@@ -1,6 +1,6 @@
 package com.aldina.demo.shop.weapons;
 
-import com.aldina.demo.Weakness;
+import com.aldina.demo.characters.Weakness;
 import com.aldina.demo.characters.Character;
 import com.aldina.demo.text.Colors;
 

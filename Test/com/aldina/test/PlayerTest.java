@@ -2,8 +2,11 @@ package com.aldina.test;
 
 import com.aldina.demo.characters.Player;
 import com.aldina.demo.shop.Potion;
+import com.aldina.demo.text.Colors;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 

@@ -8,6 +8,7 @@ import java.util.Random;
 
 import com.aldina.demo.characters.Monster;
 import com.aldina.demo.characters.Player;
+import com.aldina.demo.characters.Weakness;
 import com.aldina.demo.text.Colors;
 import com.aldina.demo.text.InputHandler;
 import com.aldina.demo.shop.weapons.Fists;

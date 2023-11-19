@@ -99,7 +99,7 @@ public class Inventory {
         weapons.add(weapon);
     }
 
-    public void appPotion(Potion potion) {
+    public void addPotion(Potion potion) {
         potions.add(potion);
     }
 

@@ -19,7 +19,7 @@ public class Shop {
     public Shop() {
 
         List<Potion> potionList = new ArrayList<>();
-        potionList.add(new Potion("Health potion", 50, 0, 0, 0, 100));
+        potionList.add(new Potion("Health potion", 50, 0, 0, 0, 80));
         potionList.add(new Potion("Strength potion", 0, 2, 0, 0, 100));
         potionList.add(new Potion("Agility potion", 0, 0, 2, 0, 100));
         potionList.add(new Potion("Intelligence potion", 0, 0, 0, 2, 100));
@@ -166,7 +166,7 @@ public class Shop {
                 case "1" -> {
                     if (player.getGold() >= potion.getPrice()) {
                         player.setGold(player.getGold() - potion.getPrice());
-                        player.getInventory().appPotion(potion.copy());
+                        player.getInventory().addPotion(potion.copy());
                         System.out.println(Colors.ITALICS + Colors.WHITE + potion.getName() + " added to your inventory." + Colors.RESET);
                         return;
                     } else {

@@ -1,4 +1,4 @@
-package com.aldina.demo;
+package com.aldina.demo.characters;
 
 public enum Weakness {
     ELECTRIC,

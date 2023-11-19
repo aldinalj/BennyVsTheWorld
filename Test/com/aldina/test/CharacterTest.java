@@ -1,6 +1,6 @@
 package com.aldina.test;
 
-import com.aldina.demo.Weakness;
+import com.aldina.demo.characters.Weakness;
 import com.aldina.demo.characters.Character;
 import com.aldina.demo.characters.Monster;
 import com.aldina.demo.characters.Player;

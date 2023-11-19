@@ -1,7 +1,8 @@
-Player's stats:
-Enemies defeated: 5
+jakob's stats:
+Enemies defeated: 1
 Level: 1
 Inventory:
 ⚜ Weapons ⚜:
 1. Fists
+2. Shock Arrows
 𖤍 Potions 𖤍:
