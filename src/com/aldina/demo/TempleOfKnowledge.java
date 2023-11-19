@@ -54,7 +54,11 @@ public class TempleOfKnowledge {
                     case 26 -> twentyseven();
                     case 27 -> twentyeight();
                     case 28 -> twentynine();
-                    case 29 -> thirty();
+                    case 29 -> {
+                        thirty();
+                        System.out.println("You've made it through the temple of knowledge! Time to battle...");
+                        return;
+                    }
                 }
                 level++;
             } else if (choice == 0) {
@@ -84,7 +88,7 @@ public class TempleOfKnowledge {
 
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -102,7 +106,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 10);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -120,7 +124,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 10);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -138,7 +142,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 15);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -156,7 +160,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 10);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -174,7 +178,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 15);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -192,7 +196,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 5);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -210,7 +214,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 10);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -228,7 +232,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 15);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -246,12 +250,12 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 15);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
 
         boolean running = true;
+        System.out.println("You found a chest! On it says \"10 digits is required to open the chest. Remember that knowledge is key...\"\nCan't guess? " + Colors.PINKst + "\n0. Give up ⏎" + Colors.RESET + " Otherwise type in the 10 digits.");
         do {
-            System.out.println("You found a chest! On it says \"10 digits is required to open the chest. Remember that knowledge is key...\"\nCan't guess? " + Colors.PINKst + "\n0. Give up ⏎" + Colors.RESET + " Otherwise type in the 10 digits.");
             System.out.print(Colors.GREENin + "❁༺  " + Colors.RESET);
             switch (in.takeString()) {
                 case "3322131131" -> {
@@ -283,7 +287,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -308,7 +312,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -329,7 +333,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -350,7 +354,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -372,7 +376,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -395,7 +399,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -418,7 +422,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -441,7 +445,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -464,7 +468,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 20);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -486,7 +490,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -509,7 +513,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -532,7 +536,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -555,7 +559,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 30);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -578,7 +582,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -601,7 +605,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 30);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -624,7 +628,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -647,7 +651,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 30);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -670,7 +674,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -693,7 +697,7 @@ public class TempleOfKnowledge {
                 player.setGold(player.getGold() + 25);
                 
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 
@@ -714,7 +718,7 @@ public class TempleOfKnowledge {
                 System.out.println("Correct! +40 gold");
                 player.setGold(player.getGold() + 40);
             }
-            default -> System.out.println("⚠ Invalid choice. Please try again.");
+            default -> System.out.println("⚠ Invalid choice. You lost your chance.");
         }
     }
 }
