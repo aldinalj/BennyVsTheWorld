@@ -18,29 +18,6 @@ public class TempleOfKnowledge {
         level = 0;
     }
 
-
-    /* public void completeLevel(int level) {
-        if (level >= 1 && level <= 30) {
-            levelCompleted[level - 1] = true;
-            if (level < 30) {
-                levelUnlocked[level] = true;
-            }
-        }
-    }
-
-
-    public void enterLevel(int level) {
-        if (level >= 1 && level <= 30) {
-            if (levelUnlocked[level - 1] && !levelCompleted[level - 1]) {
-                System.out.println("Level " + level);
-                playLevel(level);
-            } else {
-                System.out.println("Complete the previous level to unlock this one.");
-            }
-        }
-    } */
-
-
     public void playLevel() {
 
         while (true) {
@@ -274,7 +251,7 @@ public class TempleOfKnowledge {
 
         boolean running = true;
         do {
-            System.out.println("You found a chest! On it says \"10 digits is required to open the chest. Remember that knowledge is key...\"\nCan't guess? " + Colors.PINKst + "\n0. Go back ⏎" + Colors.RESET + " Otherwise type in the 10 digits.");
+            System.out.println("You found a chest! On it says \"10 digits is required to open the chest. Remember that knowledge is key...\"\nCan't guess? " + Colors.PINKst + "\n0. Give up ⏎" + Colors.RESET + " Otherwise type in the 10 digits.");
             System.out.print(Colors.GREENin + "❁༺  " + Colors.RESET);
             switch (in.takeString()) {
                 case "3322131131" -> {
